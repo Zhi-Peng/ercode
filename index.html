@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+  <!-- <title>群二维码名片</title> -->
+  <title>群二维码名片</title>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt =
+          "orientationchange" in window ? "orientationchange" : "resize",
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          docEl.style.fontSize = 100 * (clientWidth / 750) + "px";
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener("DOMContentLoaded", recalc, false);
+    })(document, window);
+  </script>
+  <style>
+    body {
+      background: #fff;
+      margin: 0;
+    }
+    .ercode {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="ercode" src="./ercode.jpg"  />
+  </div>
+</body>
+</html>
